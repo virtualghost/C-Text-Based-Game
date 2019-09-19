@@ -27,7 +27,7 @@ namespace ConsoleApp5
                 {
                     Errors.AgeIsTooOld();
                     Console.WriteLine("Type in your character's age: ");
-                    
+                    CharacterAge = Convert.ToInt32(Console.ReadLine());
                 }
                 Console.WriteLine("Greetings, " + CharacterName);
                 Console.WriteLine("Press any key to continue, ESC ends the game.");

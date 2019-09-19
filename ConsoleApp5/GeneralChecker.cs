@@ -15,14 +15,7 @@ namespace ConsoleApp5
         }
         public static Boolean AgeChecker(int CharacterAge)
         {
-            return CharacterAge >= 0;
-            /*if(CharacterAge > 100)
-            {
-                return true;
-
-            }
-            else return false;
-            */
+            return CharacterAge > 100;
         }
     }
 }

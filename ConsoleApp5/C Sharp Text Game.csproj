@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{C2DBE67B-B0A2-4EB4-A1B6-BF20ECF01A54}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ConsoleApp5</RootNamespace>
-    <AssemblyName>ConsoleApp5</AssemblyName>
+    <RootNamespace>TextGame</RootNamespace>
+    <AssemblyName>TextGame</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,6 +46,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>TextGame.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -63,8 +66,9 @@
     <Compile Include="Fight Classes\Fight.cs" />
     <Compile Include="Input.cs" />
     <Compile Include="GeneralChecker.cs" />
-    <Compile Include="Player Classes\Items.cs" />
-    <Compile Include="Player Classes\Player.cs" />
+    <Compile Include="Items\BaseItem.cs" />
+    <Compile Include="Items\WalletItem.cs" />
+    <Compile Include="Characters\Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Fight Classes\Damage.cs" />

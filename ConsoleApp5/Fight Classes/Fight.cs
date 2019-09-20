@@ -8,8 +8,7 @@ namespace ConsoleApp5.Fight_Classes
 {
     class Fight
     {
-        public float Health;
-        public float Damage;
+        
 
     }
 }

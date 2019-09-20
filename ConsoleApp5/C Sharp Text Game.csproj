@@ -57,11 +57,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enemy.cs" />
+    <Compile Include="EnemyInitializers.cs" />
     <Compile Include="Errors.cs" />
     <Compile Include="Input.cs" />
     <Compile Include="GeneralChecker.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Damage.cs" />
+    <Compile Include="Vulnerability.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

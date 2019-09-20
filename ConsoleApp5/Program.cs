@@ -31,7 +31,12 @@ namespace ConsoleApp5
                 }
                 Console.WriteLine("Greetings, " + CharacterName);
                 Console.WriteLine("Press any key to continue, ESC ends the game.");
-                
+                Console.WriteLine("Enemies are more susceptible to different types of attacks. Damage can be of differing types, such as Physical, Shadow or Light. To see a description of the current enemy, press D");
+                Console.WriteLine("First day. You wake up at 5AM and get ready for work. On the way to the subway station, you come across a {0}. He asks you for some cigarettes, you don't smoke so you have nothing to give him. He instead asks for some money. What do you do?", EnemyInitializers.burglar.Type);
+                if(Console.ReadLine() != "give him money")
+                {
+                    Console.WriteLine("")
+                }
                 Console.ReadKey();
 
             }

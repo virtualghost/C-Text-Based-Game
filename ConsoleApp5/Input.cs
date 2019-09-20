@@ -9,13 +9,22 @@ namespace ConsoleApp5
     public class Input
     {
         public static Boolean KeyBinds()
+        {
+            if (Console.ReadKey().Key == ConsoleKey.Escape)
+            {
+                return false;
+
+            }
+            return true;
+        }
+        public static Boolean Description()
         { 
-        if(Console.ReadKey().Key == ConsoleKey.Escape)
+        if(Console.ReadKey().Key == ConsoleKey.D)
             {
                 return false;
                
             }
             return true;
         }
-    }
+}
 }

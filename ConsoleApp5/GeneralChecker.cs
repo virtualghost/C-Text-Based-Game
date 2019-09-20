@@ -9,6 +9,7 @@ namespace ConsoleApp5
     public class GeneralChecker
     {
         public static char[] numbers = "1234567890".ToCharArray();
+        
         public static Boolean NameChecker(string CharacterName)
         {
             return CharacterName.IndexOfAny(numbers) >= 0;

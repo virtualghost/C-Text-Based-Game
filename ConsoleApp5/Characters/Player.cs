@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TextGame.Items;
 
-namespace TextGame
+namespace TextGame.Characters
 {
     class Player
     {
@@ -12,7 +13,6 @@ namespace TextGame
         {
             this.Name = Name;
             this.Age = Age;
-            this.Items = new Dictionary<int, string>();
             this.Damage = 0;
             this.Health = 20;
         }
@@ -24,7 +24,7 @@ namespace TextGame
 
         public float Health { get; set; } = 20;
 
-        public Items
+        public Inventory MyInventory { get; set; } = new Inventory();
 
        
 

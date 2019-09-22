@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TextGame.Player_Classes
+namespace TextGame.Items
 {
     class BaseItems
     {
-        public BaseItems(string Name, string Description) 
+        public BaseItems(string Name, string Description, float Value) 
         {
             this.Name = Name;
             this.Description = Description;
-            this.Value = 0;
+            this.Value = Value;
         }
 
         

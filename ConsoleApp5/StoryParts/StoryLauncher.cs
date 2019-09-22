@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using TextGame.Characters;
 using TextGame.Items;
 using TextGame.Technicalities;
+using TextGame.Fighting;
+using TextGame.Enemies;
 
 namespace TextGame.StoryParts
 {
@@ -15,8 +17,7 @@ namespace TextGame.StoryParts
         public static void Introduction()
         {
             
-            while (Input.KeyBinds())
-            {
+            
                 Console.WriteLine("The Warp - Alpha");
                 Console.WriteLine("Welcome to The Warp. You wake up one day and reality seems more distorted with each day that passes.");
                 Console.WriteLine("Type in your character's name: ");
@@ -39,8 +40,7 @@ namespace TextGame.StoryParts
                 player = new Player(CharacterName, CharacterAge);
                 Console.WriteLine("Press any key to continue, ESC ends the game.");
                 Console.WriteLine("Enemies are more susceptible to different types of attacks. Damage can be of differing types, such as Physical, Shadow or Light. To see a description of the current enemy, press D");
-                Console.ReadKey();
-            }
+                
         }
         public static void FirstDay()
         {
@@ -49,8 +49,9 @@ namespace TextGame.StoryParts
             if (Console.ReadLine() != "give him money")
             {
                 Console.WriteLine("He pulls a knife and aims it at you. You're in a fight!");
+                Fight.OneVersusOne(player, EnemyInitializers.burglar);
             }
-            Console.ReadKey();
+            
         }
     }
 }

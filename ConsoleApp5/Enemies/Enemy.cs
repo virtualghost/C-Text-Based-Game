@@ -4,22 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TextGame
+namespace TextGame.Enemies
 {
     class Enemy
     {
-        public string Type { get; set; }
-        public string Description { get; set; }
-        public float Damage { get; set; }
-        public int Vulnerability { get; set; }
-
-        public Enemy(string Type, string Description, float Damage, int Vulnerability)
+        public Enemy(float Health, string Type, string Description, float Damage, int Vulnerability)
         {
+            this.Health = Health;
             this.Type = Type;
             this.Description = Description;
             this.Damage = Damage;
             this.Vulnerability = Vulnerability;
         }
+        public float Health { get; set; }
+        public string Type { get; set; }
+        public string Description { get; set; }
+        public float Damage { get; set; }
+        public int Vulnerability { get; set; }
         /*public Dictionary<int, string> Enemies;
         string[] EnemyDescriptions = new string[500];
         public Enemy()

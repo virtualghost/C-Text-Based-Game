@@ -14,8 +14,12 @@ namespace TextGame
     {
         static void Main(string[] args)
         {
-            StoryLauncher.Introduction();
-            StoryLauncher.FirstDay();
+            while (Input.KeyBinds())
+            {
+                StoryLauncher.Introduction();
+                StoryLauncher.FirstDay();
+                Console.ReadKey();
+            }
         }
     }
 

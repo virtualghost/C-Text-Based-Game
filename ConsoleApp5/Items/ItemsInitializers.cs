@@ -7,7 +7,7 @@ using TextGame.Items;
 
 namespace TextGame.Items
 {
-    class ItemsInitializers
+    static class ItemsInitializers
     {
         public static BaseItems Wallet = new BaseItems("Wallet", "Money Storage", 20);
 

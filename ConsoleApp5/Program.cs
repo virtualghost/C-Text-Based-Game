@@ -18,7 +18,7 @@ namespace TextGame
             {
                 StoryLauncher.Introduction();
                 StoryLauncher.FirstDay();
-                Console.ReadKey();
+                Console.ReadKey(true);
             }
         }
     }

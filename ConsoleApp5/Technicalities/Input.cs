@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TextGame.Enemies;
 
 namespace TextGame.Technicalities
 {
@@ -10,21 +11,27 @@ namespace TextGame.Technicalities
     {
         public static Boolean KeyBinds()
         {
-            if (Console.ReadKey().Key == ConsoleKey.Escape)
+            if(Console.ReadKey().Key == ConsoleKey.Escape)
             {
                 return false;
+            }
+            return true;
+        }
 
-            }
-            return true;
-        }
-        public static Boolean Description()
-        { 
-        if(Console.ReadKey().Key == ConsoleKey.D)
+        public static void FightingInputs(ConsoleKey ConsoleKey, Enemy enemy)
+        {
+
+            switch (ConsoleKey)
             {
-                return false;
-               
+                case ConsoleKey.D:
+                    Console.WriteLine(enemy.Description);
+                    break;
+                default:
+                    break;
+                    
             }
-            return true;
+
         }
+    }
 }
-}
+

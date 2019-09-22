@@ -21,11 +21,6 @@ namespace TextGame.Fighting
                 "light, this leads to a light attack (not yet implemented)");
         }
 
-        public static void Description(Enemy enemy)
-        {
-            if (Input.Description())
-                Console.WriteLine(enemy.Description);
-        }
         public static int OneVersusOne(Player player, Enemy enemy)
         {
             Console.WriteLine("Your character's attributes are: Health {0}, Damage {1}", player.Health, player.Damage);
@@ -33,8 +28,13 @@ namespace TextGame.Fighting
             while (player.Health > 0 && enemy.Health > 0)
             {
                 Console.WriteLine("It's your turn. Type a command valid in this context to attack.");
-                Description(enemy);
-                if(Console.ReadLine() == "physical")
+                /*ConsoleKey ConsoleKeyVariable = new ConsoleKey();
+                ConsoleKeyVariable = (ConsoleKey)Console.ReadKey(); 
+                Input.FightingInputs(ConsoleKeyVariable, enemy); */
+                var input = Console.ReadKey(true);
+                Input.FightingInputs(input.Key, enemy);
+                Console.WriteLine();
+                if (Console.ReadLine() == "physical")
                 {
                     float ShowEnemyHealthDamage = enemy.Health;
                     enemy.Health -= player.Damage + RandomDamage.Next(1, 2);

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TextGame.Enemies
 {
-    class Enemy
+    public class Enemy
     {
         public Enemy(float Health, string Type, string Description, float Damage, int Vulnerability)
         {

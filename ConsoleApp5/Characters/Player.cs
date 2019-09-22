@@ -13,7 +13,7 @@ namespace TextGame.Characters
         {
             this.Name = Name;
             this.Age = Age;
-            this.Damage = 0;
+            this.Damage = 1;
             this.Health = 20;
         }
         public string Name { get; set; }

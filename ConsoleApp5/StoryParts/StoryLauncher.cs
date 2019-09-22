@@ -16,8 +16,6 @@ namespace TextGame.StoryParts
         static Player player;
         public static void Introduction()
         {
-            
-            
                 Console.WriteLine("The Warp - Alpha");
                 Console.WriteLine("Welcome to The Warp. You wake up one day and reality seems more distorted with each day that passes.");
                 Console.WriteLine("Type in your character's name: ");
@@ -48,6 +46,7 @@ namespace TextGame.StoryParts
             player.MyInventory.AddItem("Wallet", ItemsInitializers.Wallet);
             if (Console.ReadLine() != "give him money")
             {
+                Fight.Instructions();
                 Console.WriteLine("He pulls a knife and aims it at you. You're in a fight!");
                 Fight.OneVersusOne(player, EnemyInitializers.burglar);
             }

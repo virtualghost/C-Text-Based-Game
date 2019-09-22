@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp5
+namespace TextGame
 {
     class Player
     {
@@ -18,17 +18,15 @@ namespace ConsoleApp5
         }
         public string Name { get; set; }
         public int Age { get; set; }
-        public Dictionary<int, string> Items { get; set; }
 
-        public float Damage { get; set; }
+
+        public float Damage { get; set; } = 1;
 
         public float Health { get; set; } = 20;
 
+        public Items
 
-        public void AddItems(int key, string item)
-        {
-            this.Items.Add(key, item);
-        }
+       
 
     }
 }

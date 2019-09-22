@@ -61,7 +61,8 @@
     <Compile Include="Enemy Classes\EnemyInitializers.cs" />
     <Compile Include="Errors.cs" />
     <Compile Include="Fight Classes\Fight.cs" />
-    <Compile Include="Input.cs" />
+    <Compile Include="StoryParts\StoryLauncher.cs" />
+    <Compile Include="Technicalities\Input.cs" />
     <Compile Include="GeneralChecker.cs" />
     <Compile Include="Items\BaseItems.cs" />
     <Compile Include="Characters\Player.cs" />

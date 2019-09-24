@@ -48,7 +48,10 @@ namespace TextGame.StoryParts
             {
                 Fight.Instructions();
                 Console.WriteLine("He pulls a knife and aims it at you. You're in a fight!");
-                Fight.OneVersusOne(player, EnemyInitializers.burglar);
+                if(Fight.OneVersusOne(player, EnemyInitializers.burglar))
+                {
+                    
+                }
             }
             
         }

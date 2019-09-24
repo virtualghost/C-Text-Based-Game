@@ -13,16 +13,14 @@ namespace TextGame.Characters
         {
             this.Name = Name;
             this.Age = Age;
-            this.Damage = 1;
-            this.Health = 20;
         }
         public string Name { get; set; }
         public int Age { get; set; }
 
 
-        public float Damage { get; set; } = 1;
+        public int Damage { get; set; } = 1;
 
-        public float Health { get; set; } = 20;
+        public int Health { get; set; } = 20;
 
         public Inventory MyInventory { get; set; } = new Inventory();
 

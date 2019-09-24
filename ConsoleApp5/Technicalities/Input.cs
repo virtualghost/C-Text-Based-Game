@@ -9,6 +9,7 @@ namespace TextGame.Technicalities
 {
     public class Input
     {
+        public static ConsoleKeyInfo input = Console.ReadKey(true);
         public static Boolean KeyBinds()
         {
             if(Console.ReadKey(true).Key == ConsoleKey.Escape)

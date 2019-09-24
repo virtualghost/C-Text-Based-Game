@@ -49,9 +49,21 @@ namespace TextGame.StoryParts
                 Fight.Instructions();
                 Console.WriteLine("He pulls a knife and aims it at you. You're in a fight!");
                 Fight.OneVersusOne(player, EnemyInitializers.burglar);
-
             }
+            else player.MyInventory.List["Wallet"].DeductValue(100);
             
+            Console.WriteLine("Your wallet now has {0} dollars left.", player.MyInventory.List["Wallet"].value);
+            /*BaseItems soso = new BaseItems(100);
+            soso.value = player.MyInventory.List["Wallet"].value;
+            if (player.MyInventory.List.TryGetValue("Wallet", out soso))
+            {
+                Console.WriteLine("For key = \"tif\", value = {0}.", soso);
+            }
+            else
+            {
+                Console.WriteLine("Key = \"tif\" is not found.");
+            }
+                                 try AND get VALUE              */
         }
     }
 }

@@ -27,12 +27,12 @@ namespace TextGame.StoryParts
                     CharacterName = Console.ReadLine();
                 }
                 Console.WriteLine("Type in your character's age: ");
-                int CharacterAge = Convert.ToInt32(Console.ReadLine());
+                uint CharacterAge = Convert.ToUInt32(Console.ReadLine());
                 while (GeneralChecker.AgeChecker(CharacterAge))
                 {
                     Errors.AgeIsTooOld();
                     Console.WriteLine("Type in your character's age: ");
-                    CharacterAge = Convert.ToInt32(Console.ReadLine());
+                    CharacterAge = Convert.ToUInt32(Console.ReadLine());
                 }
                 Console.WriteLine("Greetings, " + CharacterName);
                 player = new Player(CharacterName, CharacterAge);
@@ -48,10 +48,8 @@ namespace TextGame.StoryParts
             {
                 Fight.Instructions();
                 Console.WriteLine("He pulls a knife and aims it at you. You're in a fight!");
-                if(Fight.OneVersusOne(player, EnemyInitializers.burglar))
-                {
-                    
-                }
+                Fight.OneVersusOne(player, EnemyInitializers.burglar);
+                
             }
             
         }

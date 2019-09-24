@@ -17,14 +17,14 @@ namespace TextGame.Fighting
         {
             Console.WriteLine("The battle system works in turns. As it stands, the first turn is yours, then your enemy's. It's very boring at the moment, later it will have Damage types and overhauls. When your turn comes, the following commands are valid:\n" +
                 "physical, this leads to a physical attack, \n" +
-                "shadow, this leads to a shadow attack (not yet implemented), \n" +
-                "light, this leads to a light attack (not yet implemented)");
+                "shadow, this leads to a shadow attack, \n" +
+                "light, this leads to a light attack");
         }
 
         public static Boolean OneVersusOne(Player player, Enemy enemy)
         {
-            Console.WriteLine("Your character's attributes are: Health {0}, Damage {1}", player.Health, player.Damage);
-            Console.WriteLine("Your enemy's attributes are: Health {0}, Damage {1}", enemy.Health, enemy.Damage);       //The attributes of both adversaries
+            Console.WriteLine("Your character's attributes are: Health {0}, Physical Damage, {1} Shadow Damage, {2}, Light Damage {3}", player.Health, player.Damage.PhysicalDamage, player.Damage.ShadowDamage, player.Damage.LightDamage);
+            Console.WriteLine("Your enemy's attributes are: Health {0}, Physical Damage {1}, Shadow Damage, {2}, Light Damage {3}", enemy.Health, enemy.Damage.PhysicalDamage, enemy.Damage.ShadowDamage, enemy.Damage.LightDamage);       //The attributes of both adversaries
             while (player.Health > 0 && enemy.Health > 0)
             {
                 Console.WriteLine("It's your turn. Type a command valid in this context to attack.");
@@ -34,28 +34,41 @@ namespace TextGame.Fighting
                 var input = Console.ReadKey(true);
                 Input.FightingInputs(input.Key, enemy);
                 Console.WriteLine();
-                int ShowEnemyHealthDamage = enemy.Health;
+                uint ShowEnemyHealthDamage = enemy.Health;
                 switch (Console.ReadLine())
                 { 
                     case "physical":
-                    enemy.Health -= player.Damage + RandomDamage.Next(0, player.Damage);
-                    Console.WriteLine("You have dealt {0} Physical Damage to the adversary", (ShowEnemyHealthDamage - enemy.Health));
+                        enemy.Health -= enemy.Damage.PhysicalDamage + (uint)RandomDamage.Next(player.Damage.PhysicalDamage);
+                        Console.WriteLine("You have dealt {0} Physical Damage to the adversary", (ShowEnemyHealthDamage - enemy.Health));
                     break;
 
                     case "shadow":
-                    enemy.Health -= player.Damage + RandomDamage.Next(0, player.Damage);
-                    Console.WriteLine("You have dealt {0} Shadow Damage to the adversary", (ShowEnemyHealthDamage - enemy.Health));
+                        enemy.Health -= enemy.Damage.ShadowDamage + (uint)RandomDamage.Next(player.Damage.ShadowDamage);
+                        Console.WriteLine("You have dealt {0} Shadow Damage to the adversary", (ShowEnemyHealthDamage - enemy.Health));
                     break;
 
                     case "light":
-                    enemy.Health -= player.Damage + RandomDamage.Next(0, player.Damage);
-                    Console.WriteLine("You have dealt {0} Light Damage to the adversary", (ShowEnemyHealthDamage - enemy.Health));
+                        enemy.Health -= enemy.Damage.LightDamage + (uint)RandomDamage.Next(player.Damage.LightDamage);
+                        Console.WriteLine("You have dealt {0} Light Damage to the adversary", (ShowEnemyHealthDamage - enemy.Health));
                     break;
 
                 }
                 float ShowPlayerHealthDamage = player.Health;
-                player.Health -= enemy.Damage + RandomDamage.Next(0, enemy.Damage);
-                Console.WriteLine("The enemy {0} has dealt {1} Physical Damage to you.", enemy.Type, (ShowPlayerHealthDamage - player.Health));
+                if (enemy.Damage.PhysicalDamage > 0)
+                {
+                    player.Health -= enemy.Damage.PhysicalDamage + (uint)RandomDamage.Next(enemy.Damage.PhysicalDamage);
+                    Console.WriteLine("The enemy {0} has dealt {1} Physical Damage to you.", enemy.Type, (ShowPlayerHealthDamage - player.Health));
+                }
+                else if(enemy.Damage.ShadowDamage > 0)
+                {
+                    player.Health -= enemy.Damage.ShadowDamage + (uint)RandomDamage.Next(enemy.Damage.ShadowDamage);
+                    Console.WriteLine("The enemy {0} has dealt {1} Shadow Damage to you.", enemy.Type, (ShowPlayerHealthDamage - player.Health));
+                }
+                else if(enemy.Damage.LightDamage > 0)
+                {
+                    player.Health -= enemy.Damage.LightDamage + (uint)RandomDamage.Next(enemy.Damage.LightDamage);
+                    Console.WriteLine("The enemy {0} has dealt {1} Light Damage to you.", enemy.Type, (ShowPlayerHealthDamage - player.Health));
+                }
                 Console.WriteLine("The player has :{0} Health and the enemy has: {1} Health", player.Health, enemy.Health);
             }
             if(player.Health == 0)

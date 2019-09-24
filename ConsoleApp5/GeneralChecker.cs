@@ -14,7 +14,7 @@ namespace TextGame
         {
             return CharacterName.IndexOfAny(numbers) >= 0;
         }
-        public static Boolean AgeChecker(int CharacterAge)
+        public static Boolean AgeChecker(uint CharacterAge)
         {
             return CharacterAge > 100;
         }

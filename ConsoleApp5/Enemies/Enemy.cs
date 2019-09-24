@@ -10,7 +10,7 @@ namespace TextGame.Enemies
 {
     public class Enemy
     {
-        public Enemy(int Health, string Type, string Description, int PhysicalDamage, int ShadowDamage, int LightDamage, int VulnerabilityID, string VulnerabilityName)
+        public Enemy(uint Health, string Type, string Description, ushort PhysicalDamage, ushort ShadowDamage, ushort LightDamage, int VulnerabilityID, string VulnerabilityName)
         {
             this.Health = Health;
             this.Type = Type;
@@ -18,7 +18,7 @@ namespace TextGame.Enemies
             this.Damage = new DamageTypes(PhysicalDamage, ShadowDamage, LightDamage);
             this.Vulnerabilities = new Vulnerability(VulnerabilityID, VulnerabilityName);
         }
-        public int Health { get; set; }
+        public uint Health { get; set; }
         public string Type { get; set; }
         public string Description { get; set; }
         public DamageTypes Damage { get; set; }

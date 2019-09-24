@@ -8,7 +8,7 @@ namespace TextGame.Enemies
 {
     static class EnemyInitializers
     {
-        public static Enemy burglar = new Enemy(10, "Burglar", "A normal human, vulnerable to all attack types.", 20, 0, 0, 0, "VulnerabilityToAll");
+        public static Enemy burglar = new Enemy(10, "Burglar", "A normal human, vulnerable to all attack types.", 1, 0, 0, 0, "VulnerabilityToAll");
         /*readonly Enemy burglar = new Enemy("Burglar", "A normal human, vulnerable to all attack types.", 10, 0);
          * readonly Enemy burglar = new Enemy("Burglar", "A normal human, vulnerable to all attack types.", 10, 0);
          * readonly Enemy burglar = new Enemy("Burglar", "A normal human, vulnerable to all attack types.", 10, 0);

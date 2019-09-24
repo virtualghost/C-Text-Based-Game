@@ -11,7 +11,7 @@ namespace TextGame.Technicalities
     {
         public static Boolean KeyBinds()
         {
-            if(Console.ReadKey().Key == ConsoleKey.Escape)
+            if(Console.ReadKey(true).Key == ConsoleKey.Escape)
             {
                 return false;
             }

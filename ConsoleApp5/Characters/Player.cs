@@ -22,7 +22,7 @@ namespace TextGame.Characters
 
         public DamageTypes Damage { get; set; }
 
-        public uint Health { get; set; } = 20;
+        public int Health { get; set; } = 20;
 
         public Inventory MyInventory { get; set; } = new Inventory();
 

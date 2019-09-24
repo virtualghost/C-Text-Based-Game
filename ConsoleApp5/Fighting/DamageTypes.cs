@@ -8,15 +8,15 @@ namespace TextGame.Fighting
 {
     public class DamageTypes
     {
-        public DamageTypes(ushort PhysicalDamage, ushort ShadowDamage, ushort LightDamage)
+        public DamageTypes(short PhysicalDamage, short ShadowDamage, short LightDamage)
         {
             this.PhysicalDamage = PhysicalDamage;
             this.ShadowDamage = ShadowDamage;
             this.LightDamage = LightDamage;
         }
 
-        public ushort PhysicalDamage { get; set; }
-        public ushort ShadowDamage { get; set; }
-        public ushort LightDamage { get; set; }
+        public short PhysicalDamage { get; set; }
+        public short ShadowDamage { get; set; }
+        public short LightDamage { get; set; }
     }
 }

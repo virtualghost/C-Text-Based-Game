@@ -34,44 +34,53 @@ namespace TextGame.Fighting
                 var input = Console.ReadKey(true);
                 Input.FightingInputs(input.Key, enemy);
                 Console.WriteLine();
-                uint ShowEnemyHealthDamage = enemy.Health;
+                int ShowEnemyHealthDamage = enemy.Health;
                 switch (Console.ReadLine())
                 { 
                     case "physical":
-                        enemy.Health -= enemy.Damage.PhysicalDamage + (uint)RandomDamage.Next(player.Damage.PhysicalDamage);
+                        enemy.Health -= enemy.Damage.PhysicalDamage + RandomDamage.Next(player.Damage.PhysicalDamage + 1);
                         Console.WriteLine("You have dealt {0} Physical Damage to the adversary", (ShowEnemyHealthDamage - enemy.Health));
                     break;
 
                     case "shadow":
-                        enemy.Health -= enemy.Damage.ShadowDamage + (uint)RandomDamage.Next(player.Damage.ShadowDamage);
+                        enemy.Health -= enemy.Damage.ShadowDamage + RandomDamage.Next(player.Damage.ShadowDamage + 1);
                         Console.WriteLine("You have dealt {0} Shadow Damage to the adversary", (ShowEnemyHealthDamage - enemy.Health));
                     break;
 
                     case "light":
-                        enemy.Health -= enemy.Damage.LightDamage + (uint)RandomDamage.Next(player.Damage.LightDamage);
+                        enemy.Health -= enemy.Damage.LightDamage + RandomDamage.Next(player.Damage.LightDamage + 1);
                         Console.WriteLine("You have dealt {0} Light Damage to the adversary", (ShowEnemyHealthDamage - enemy.Health));
                     break;
 
                 }
-                float ShowPlayerHealthDamage = player.Health;
+                int ShowPlayerHealthDamage = player.Health;
                 if (enemy.Damage.PhysicalDamage > 0)
                 {
-                    player.Health -= enemy.Damage.PhysicalDamage + (uint)RandomDamage.Next(enemy.Damage.PhysicalDamage);
+                    player.Health -= enemy.Damage.PhysicalDamage + RandomDamage.Next(enemy.Damage.PhysicalDamage + 1);
                     Console.WriteLine("The enemy {0} has dealt {1} Physical Damage to you.", enemy.Type, (ShowPlayerHealthDamage - player.Health));
                 }
                 else if(enemy.Damage.ShadowDamage > 0)
                 {
-                    player.Health -= enemy.Damage.ShadowDamage + (uint)RandomDamage.Next(enemy.Damage.ShadowDamage);
+                    player.Health -= enemy.Damage.ShadowDamage + RandomDamage.Next(enemy.Damage.ShadowDamage + 1);
                     Console.WriteLine("The enemy {0} has dealt {1} Shadow Damage to you.", enemy.Type, (ShowPlayerHealthDamage - player.Health));
                 }
                 else if(enemy.Damage.LightDamage > 0)
                 {
-                    player.Health -= enemy.Damage.LightDamage + (uint)RandomDamage.Next(enemy.Damage.LightDamage);
+                    player.Health -= enemy.Damage.LightDamage + RandomDamage.Next(enemy.Damage.LightDamage + 1);
                     Console.WriteLine("The enemy {0} has dealt {1} Light Damage to you.", enemy.Type, (ShowPlayerHealthDamage - player.Health));
                 }
-                Console.WriteLine("The player has :{0} Health and the enemy has: {1} Health", player.Health, enemy.Health);
+                if (player.Health < 0)
+                {
+                    player.Health = 0;
+                }
+                if (enemy.Health < 0)
+                {
+                    enemy.Health = 0;
+                }
+                Console.WriteLine("The player has: {0} Health and the enemy has: {1} Health", player.Health, enemy.Health);
             }
-            if(player.Health == 0)
+            Console.WriteLine("Post-Fight: The player has: {0} Health and the enemy has: {1} Health", player.Health, enemy.Health);
+            if (player.Health == 0)
             {
                 Console.WriteLine("You died. Game over.");
                 return false;

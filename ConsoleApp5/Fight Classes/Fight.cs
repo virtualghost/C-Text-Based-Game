@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TextGame.Fight_Classes
+namespace ConsoleApp5.Fight_Classes
 {
     class Fight
     {

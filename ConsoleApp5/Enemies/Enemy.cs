@@ -3,23 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TextGame.Enemies;
+using TextGame.Fighting;
 
-namespace ConsoleApp5
+namespace TextGame.Enemies
 {
-    class Enemy
+    public class Enemy
     {
-        public string Type { get; set; }
-        public string Description { get; set; }
-        public float Damage { get; set; }
-        public int Vulnerability { get; set; }
-
-        public Enemy(string Type, string Description, float Damage, int Vulnerability)
+        public Enemy(int Health, string Type, string Description, short PhysicalDamage, short ShadowDamage, short LightDamage, int VulnerabilityID, string VulnerabilityName)
         {
+            this.Health = Health;
             this.Type = Type;
             this.Description = Description;
-            this.Damage = Damage;
-            this.Vulnerability = Vulnerability;
+            this.Damage = new DamageTypes(PhysicalDamage, ShadowDamage, LightDamage);
+            this.Vulnerabilities = new Vulnerability(VulnerabilityID, VulnerabilityName);
         }
+        public int Health { get; set; }
+        public string Type { get; set; }
+        public string Description { get; set; }
+        public DamageTypes Damage { get; set; }
+        public Vulnerability Vulnerabilities { get; set; }
         /*public Dictionary<int, string> Enemies;
         string[] EnemyDescriptions = new string[500];
         public Enemy()

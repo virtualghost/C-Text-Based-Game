@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp5
+namespace TextGame
 {
     public class GeneralChecker
     {
@@ -14,7 +14,7 @@ namespace ConsoleApp5
         {
             return CharacterName.IndexOfAny(numbers) >= 0;
         }
-        public static Boolean AgeChecker(int CharacterAge)
+        public static Boolean AgeChecker(uint CharacterAge)
         {
             return CharacterAge > 100;
         }

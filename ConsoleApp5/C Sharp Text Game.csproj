@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{C2DBE67B-B0A2-4EB4-A1B6-BF20ECF01A54}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ConsoleApp5</RootNamespace>
+    <RootNamespace>TextGame</RootNamespace>
     <AssemblyName>ConsoleApp5</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -57,18 +57,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Enemy Classes\Enemy.cs" />
-    <Compile Include="Enemy Classes\EnemyInitializers.cs" />
+    <Compile Include="Enemies\Enemy.cs" />
+    <Compile Include="Enemies\EnemyInitializers.cs" />
     <Compile Include="Errors.cs" />
-    <Compile Include="Fight Classes\Fight.cs" />
-    <Compile Include="Input.cs" />
+    <Compile Include="Fighting\DamageTypes.cs" />
+    <Compile Include="Fighting\Fight.cs" />
+    <Compile Include="Items\ItemMethods.cs" />
+    <Compile Include="StoryParts\StoryLauncher.cs" />
+    <Compile Include="Technicalities\Input.cs" />
     <Compile Include="GeneralChecker.cs" />
-    <Compile Include="Player Classes\Items.cs" />
-    <Compile Include="Player Classes\Player.cs" />
+    <Compile Include="Items\BaseItems.cs" />
+    <Compile Include="Characters\Player.cs" />
+    <Compile Include="Items\Inventory.cs" />
+    <Compile Include="Items\ItemsInitializers.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Fight Classes\Damage.cs" />
-    <Compile Include="Vulnerability.cs" />
+    <Compile Include="Fighting\Damage.cs" />
+    <Compile Include="Enemies\Vulnerability.cs" />
+    <Compile Include="Technicalities\UnitTesting.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

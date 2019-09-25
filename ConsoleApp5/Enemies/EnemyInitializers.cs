@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp5
+namespace TextGame.Enemies
 {
-    class EnemyInitializers
+    static class EnemyInitializers
     {
-        public static Enemy burglar = new Enemy("Burglar", "A normal human, vulnerable to all attack types.", 10, 0);
+        public static Enemy burglar = new Enemy(10, "Burglar", "A normal human, vulnerable to all attack types.", 1, 0, 0, 0, "VulnerabilityToAll");
         /*readonly Enemy burglar = new Enemy("Burglar", "A normal human, vulnerable to all attack types.", 10, 0);
          * readonly Enemy burglar = new Enemy("Burglar", "A normal human, vulnerable to all attack types.", 10, 0);
          * readonly Enemy burglar = new Enemy("Burglar", "A normal human, vulnerable to all attack types.", 10, 0);

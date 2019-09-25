@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp5.Fight_Classes
+namespace TextGame.Items
 {
-    class Fight
+    class ItemMethods
     {
-        
-
+        // public int DeductMoney(ItemsInitializers)
     }
 }

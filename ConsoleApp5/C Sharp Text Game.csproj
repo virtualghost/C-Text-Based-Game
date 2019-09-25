@@ -63,6 +63,8 @@
     <Compile Include="Fighting\DamageTypes.cs" />
     <Compile Include="Fighting\Fight.cs" />
     <Compile Include="Items\ItemMethods.cs" />
+    <Compile Include="Items\WalletItem.cs" />
+    <Compile Include="Items\WeaponItem.cs" />
     <Compile Include="StoryParts\StoryLauncher.cs" />
     <Compile Include="Technicalities\Input.cs" />
     <Compile Include="GeneralChecker.cs" />

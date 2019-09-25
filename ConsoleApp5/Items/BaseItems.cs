@@ -6,31 +6,23 @@ using System.Threading.Tasks;
 
 namespace TextGame.Items
 {
-    class BaseItems
+    public abstract class BaseItem
     {
-        public BaseItems(string Name, string Description, int Value) 
+        public BaseItem(string name, string description, int basePrice) 
         {
-            this.Name = Name;
-            this.Description = Description;
-            this.Value = Value;
+            this.Name = name;
+            this.Description = description;
+            this._basePrice = basePrice;
         }
 
         public string Name { get; set; }
         public string Description { get; set; }
         public Dictionary<int, string> Type { get; set; } = new Dictionary<int, string>();
-        public float Damage { get; set; }
-        private int Value { get; set; }
-        public int value //NAMING RULE VIOLATION
+        private int _basePrice { get; set; }
+        public int BasePrice //NAMING RULE VIOLATION
         {
-            get { return this.Value; }
-            set { this.Value = value; } //ENCAPSULATION
-        }
-
-        
-        public int DeductValue(int value)
-        {
-            this.Value -= value;
-            return this.Value;
+            get { return this._basePrice; }
+            set { this._basePrice = value; } //ENCAPSULATION
         }
     }
 }

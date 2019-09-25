@@ -15,10 +15,6 @@ namespace TextGame.Items
             this.Value = Value;
         }
 
-        public BaseItems(int Value)
-        {
-            this.Value = value;
-        }
         public string Name { get; set; }
         public string Description { get; set; }
         public Dictionary<int, string> Type { get; set; } = new Dictionary<int, string>();

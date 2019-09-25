@@ -42,7 +42,7 @@ namespace TextGame.StoryParts
         }
         public static void FirstDay()
         {
-            Console.WriteLine("First day. You wake up at 5AM and get ready for work. You take a shower, get dressed, grab your wallet, and get out of the apartment. On the way to the subway station, you come across a {0}. He asks you for some cigarettes, you don't smoke so you have nothing to give him. He instead asks for some money. What do you do?", EnemyInitializers.burglar.Type);
+            Console.WriteLine("First day. You wake up at 5AM and get ready for work. You take a shower, get dressed, grab your wallet, and get out of the apartment. On the way to the metro station, you come across a {0}. He asks you for some cigarettes, you don't smoke so you have nothing to give him. He instead asks for some money. What do you do?", EnemyInitializers.burglar.Type);
             player.MyInventory.AddItem("Wallet", ItemsInitializers.Wallet);
             if (Console.ReadLine() != "give him money")
             {
@@ -53,17 +53,19 @@ namespace TextGame.StoryParts
             else player.MyInventory.List["Wallet"].DeductValue(100);
             
             Console.WriteLine("Your wallet now has {0} dollars left.", player.MyInventory.List["Wallet"].value);
-            /*BaseItems soso = new BaseItems(100);
-            soso.value = player.MyInventory.List["Wallet"].value;
-            if (player.MyInventory.List.TryGetValue("Wallet", out soso))
+            
+            if (player.MyInventory.List.TryGetValue("Wallet", out ItemsInitializers.soso))
             {
-                Console.WriteLine("For key = \"tif\", value = {0}.", soso);
+
+                Console.WriteLine($"For key = \"tif\", value = {ItemsInitializers.soso.value}.");
             }
             else
             {
                 Console.WriteLine("Key = \"tif\" is not found.");
             }
-                                 try AND get VALUE              */
+                                      
+            Console.WriteLine("Shocked from the experience, you rush to enter the metro. It is crowded, but fairly safe save for thieves. After a few stations and a bit of walking, you find yourself at work. \n" +
+                "You sit down at your desk and boot up your PC, however a feeling lingers that everything is not as it seems.");
         }
     }
 }

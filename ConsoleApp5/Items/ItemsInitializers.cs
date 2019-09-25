@@ -9,6 +9,7 @@ namespace TextGame.Items
 {
     static class ItemsInitializers
     {
+        public static BaseItems soso = new BaseItems("Wallet", "Money Storage", 100);
         public static BaseItems Wallet = new BaseItems("Wallet", "Money Storage", 100);
 
     }

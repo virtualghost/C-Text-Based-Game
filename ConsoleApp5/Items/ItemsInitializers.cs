@@ -8,10 +8,11 @@ using TextGame.Items.InventoryItems;
 
 namespace TextGame.Items
 {
-    static class ItemsInitializers
+    public class ItemsInitializers
     {
-        
-        public static Wallet Wallet = new Wallet("Wallet", "Money Storage", 100);
+        public static Wallet WalletItem = new Wallet("Wallet", "Money Storage", 100);
+
+
 
     }
 }

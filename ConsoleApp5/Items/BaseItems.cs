@@ -17,12 +17,11 @@ namespace TextGame.Items
 
         public string Name { get; set; }
         public string Description { get; set; }
-
         private int _basePrice;
-        public int BasePrice //NAMING RULE VIOLATION
+        public int BasePrice 
         {
             get { return this._basePrice; }
-            set { this._basePrice = value; } //ENCAPSULATION
+            set { this._basePrice = value; }
         }
 
         

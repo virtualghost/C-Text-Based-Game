@@ -13,9 +13,9 @@ namespace TextGame.Items
 
         }
         public string MyInventory { get; set; } = "My Inventory";
-        public Dictionary<string, BaseItems> List { get; set; } = new Dictionary<string, BaseItems>();
+        public Dictionary<string, List<ItemsInitializers>> List { get; set; } = new Dictionary<string, List<ItemsInitializers>>();
 
-        public void AddItem(string ItemName, BaseItems item)
+        public void AddItem(string ItemName, List<ItemsInitializers> item)
         {
             List.Add(ItemName, item);
         }

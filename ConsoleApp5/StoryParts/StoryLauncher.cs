@@ -50,14 +50,14 @@ namespace TextGame.StoryParts
                 Console.WriteLine("He pulls a knife and aims it at you. You're in a fight!");
                 Fight.OneVersusOne(player, EnemyInitializers.burglar);
             }
-            else player.MyInventory.List["Wallet"].DeductValue(100);
+            else player.MyInventory.Dictionary["Wallet"].DeductValue(100);
             
-            Console.WriteLine("Your wallet now has {0} dollars left.", player.MyInventory.List["Wallet"].value);
+            Console.WriteLine("Your wallet now has {0} dollars left.", player.MyInventory.Dictionary["Wallet"].Amount);
             
-            if (player.MyInventory.List.TryGetValue("Wallet", out ItemsInitializers.Wallet))
+            if (player.MyInventory.Dictionary.TryGetValue("Wallet", out List<BaseItems> value))
             {
 
-                Console.WriteLine($"For key = \"tif\", value = {ItemsInitializers.Wallet.BasePrice}.");
+                Console.WriteLine($"For key = \"tif\", value = {ItemsInitializers.WalletItem.Amount}.");
             }
             else
             {

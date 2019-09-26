@@ -24,7 +24,8 @@ namespace TextGame.Items
             set { this._basePrice = value; }
         }
 
-        
-        
+
+
+
     }
 }

@@ -13,11 +13,15 @@ namespace TextGame.Items
 
         }
         public string MyInventory { get; set; } = "My Inventory";
-        public Dictionary<string, List<ItemsInitializers>> List { get; set; } = new Dictionary<string, List<ItemsInitializers>>();
+        public Dictionary<string, List<BaseItems>> Dictionary { get; set; } = new Dictionary<string, List<BaseItems>>();
 
-        public void AddItem(string ItemName, List<ItemsInitializers> item)
+        public void AddItem(string ItemName, BaseItems item)
         {
-            List.Add(ItemName, item);
+            if (!Dictionary.ContainsKey(ItemName))
+			{
+                Dictionary.Add(ItemName, new List<BaseItems>());
+			}
+            Dictionary[ItemName].Add(item);
         }
         
     }

@@ -24,9 +24,10 @@ namespace TextGame.Characters
 
         public int Health { get; set; } = 20;
 
-        public Inventory MyInventory { get; set; } = new Inventory();
+        public List<BaseItems> Inventory { get; set; } = new List<BaseItems>();
 
-       
+
+
 
     }
 }

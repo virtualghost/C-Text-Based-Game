@@ -11,8 +11,6 @@ namespace TextGame.Items
     public class ItemsInitializers
     {
         public static Wallet WalletItem = new Wallet("Wallet", "Money Storage", 100);
-
-
-
+        
     }
 }

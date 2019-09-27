@@ -15,7 +15,7 @@ namespace TextGame.Items.InventoryItems
         public Wallet(string Name, string Description, int Value)
             : base(Name, Description, Value)
         {
-
+            this.Amount = Value;
         }
 
         override public ObjectType TypeOfObject()

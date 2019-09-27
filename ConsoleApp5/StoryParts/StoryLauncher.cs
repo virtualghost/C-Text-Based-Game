@@ -44,30 +44,34 @@ namespace TextGame.StoryParts
         public static void FirstDay()
         {
             Console.WriteLine("First day. You wake up at 5AM and get ready for work. You take a shower, get dressed, grab your wallet, and get out of the apartment. On the way to the metro station, you come across a {0}. He asks you for some cigarettes, you don't smoke so you have nothing to give him. He instead asks for some money. What do you do?", EnemyInitializers.burglar.Type);
-            player.MyInventory.AddItem("Wallet", ItemsInitializers.WalletItem);
-            if (player.MyInventory.Dictionary["Wallet"].TypeOfObject() == BaseItems.ObjectType.WalletType)
+            player.Inventory.Add(ItemsInitializers.WalletItem);
+            var wallet = player.Inventory.OfType<Wallet>().SingleOrDefault();
+            /*player.MyInventory.AddItem("Wallet", ItemsInitializers.WalletItem);
+            var wallet = player.MyInventory.Dictionary["Wallet"].OfType<Wallet>().SingleOrDefault();
+            if (player.MyInventory.Dictionary["Wallet"][0].TypeOfObject() == BaseItems.ObjectType.WalletType) ///this code smells
             {
-                player.MyInventory.Dictionary["Wallet"] = (Wallet)player.MyInventory.Dictionary["Wallet"];
-            }
+                player.MyInventory.Dictionary["Wallet"][0] = (Wallet)player.MyInventory.Dictionary["Wallet"][0];
+            }  */
+
             if (Console.ReadLine() != "give him money")
             {
                 Fight.Instructions();
                 Console.WriteLine("He pulls a knife and aims it at you. You're in a fight!");
                 Fight.OneVersusOne(player, EnemyInitializers.burglar);
             }
-            else player.MyInventory.Dictionary["Wallet"].DeductValue(100);
+            else wallet.DeductValue(100);
             
-            Console.WriteLine("Your wallet now has {0} dollars left.", player.MyInventory.Dictionary["Wallet"].Amount);
-            
-            if (player.MyInventory.Dictionary.TryGetValue("Wallet", out List<BaseItems> value))
+            Console.WriteLine($"Your wallet now has {wallet.Amount} dollars left.");
+            /* var value = new BaseItems();
+            if (player.MyInventory.Dictionary.TryGetValue("Wallet", out value))
             {
 
-                Console.WriteLine($"For key = \"tif\", value = {ItemsInitializers.WalletItem.Amount}.");
+                Console.WriteLine($"For key = \"tif\", value = {wallet.Amount}.");
             }
             else
             {
                 Console.WriteLine("Key = \"tif\" is not found.");
-            }
+            } */
                                       
             Console.WriteLine("Shocked from the experience, you rush to enter the metro. It is crowded, but fairly safe save for thieves. After a few stations and a bit of walking, you find yourself at work. \n" +
                 "You sit down at your desk and boot up your PC, however a feeling in the back of your minid lingers that everything is not as it seems.");

@@ -29,7 +29,9 @@ namespace TextGame
             WalletAmount.AStat = Amount; */ /// usage of a database-thought type of item system
              while (Input.KeyBinds())
             {
+                /// 
                 StoryLauncher.Introduction();
+                Input.Debug();
                 StoryLauncher.FirstDay();
                 Console.ReadKey(true); 
             } 

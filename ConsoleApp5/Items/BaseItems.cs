@@ -8,7 +8,7 @@ namespace TextGame.Items
 {
     public abstract class BaseItems
     {
-        public BaseItems(string Name, string Description, int Value) 
+        public BaseItems(string Name, string Description, int Value)
         {
             this.Name = Name;
             this.Description = Description;
@@ -18,14 +18,24 @@ namespace TextGame.Items
         public string Name { get; set; }
         public string Description { get; set; }
         private int _basePrice;
-        public int BasePrice 
+        public int BasePrice
         {
             get { return this._basePrice; }
             set { this._basePrice = value; }
         }
 
-
-
-
+        public enum ObjectType
+        {
+            LackOfAnObjectType = 0,
+            WalletType = 1,
+            WeaponType = 2
+        }
+        public virtual ObjectType TypeOfObject()
+        {
+            return ObjectType.LackOfAnObjectType;
+        }
+        
+        
+               
     }
 }

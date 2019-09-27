@@ -17,6 +17,11 @@ namespace TextGame.Items.InventoryItems
         {
 
         }
+
+        override public ObjectType TypeOfObject()
+        {
+            return ObjectType.WalletType;
+        }
         public int DeductValue(int Value)
         {
             this._amount -= Value;

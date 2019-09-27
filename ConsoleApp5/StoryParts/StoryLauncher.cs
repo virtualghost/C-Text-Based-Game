@@ -8,6 +8,7 @@ using TextGame.Items;
 using TextGame.Technicalities;
 using TextGame.Fighting;
 using TextGame.Enemies;
+using TextGame.Items.InventoryItems;
 
 namespace TextGame.StoryParts
 {
@@ -44,6 +45,10 @@ namespace TextGame.StoryParts
         {
             Console.WriteLine("First day. You wake up at 5AM and get ready for work. You take a shower, get dressed, grab your wallet, and get out of the apartment. On the way to the metro station, you come across a {0}. He asks you for some cigarettes, you don't smoke so you have nothing to give him. He instead asks for some money. What do you do?", EnemyInitializers.burglar.Type);
             player.MyInventory.AddItem("Wallet", ItemsInitializers.WalletItem);
+            if (player.MyInventory.Dictionary["Wallet"].TypeOfObject() == BaseItems.ObjectType.WalletType)
+            {
+                player.MyInventory.Dictionary["Wallet"] = (Wallet)player.MyInventory.Dictionary["Wallet"];
+            }
             if (Console.ReadLine() != "give him money")
             {
                 Fight.Instructions();
